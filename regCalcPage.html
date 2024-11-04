@@ -25,37 +25,46 @@
       <p>This is a webpage for doing simple methematical calculations.</p>
     </div>
     <div class="calculationSection">
-      <input class="textarea" name="textarea">
+      <input class="textarea" name="textarea" type="number" id="textBox">
       <table>
         <tr>
-          <td><input type="button" value="AC"></td>
+          <td><input type="button" value="AC" id="AC" onclick="clearTextArea()"></td>
           <td><input type="button" value="+/-"></td>
           <td><input type="button" value="%"></td>
           <td><input type="button" value="/"></td>
         </tr>
         <tr>
-          <td><input type="button" value="7"></td>
-          <td><input type="button" value="8"></td>
-          <td><input type="button" value="9"></td>
+          <td><input type="button" value="7" onclick="addToTextArea(7)"></td>
+          <td><input type="button" value="8" onclick="addToTextArea(8)"></td>
+          <td><input type="button" value="9" onclick="addToTextArea(9)"></td>
           <td><input type="button" value="X"></td>
         </tr>
         <tr>
-          <td><input type="button" value="4"></td>
-          <td><input type="button" value="5"></td>
-          <td><input type="button" value="6"></td>
+          <td><input type="button" value="4" onclick="addToTextArea(4)"></td>
+          <td><input type="button" value="5" onclick="addToTextArea(5)"></td>
+          <td><input type="button" value="6" onclick="addToTextArea(6)"></td>
           <td><input type="button" value="-"></td>
         </tr>
         <tr>
-          <td><input type="button" value="1"></td>
-          <td><input type="button" value="2"></td>
-          <td><input type="button" value="3"></td>
+          <td><input type="button" value="1" onclick="addToTextArea(1)"></td>
+          <td><input type="button" value="2" onclick="addToTextArea(2)"></td>
+          <td><input type="button" value="3" onclick="addToTextArea(3)"></td>
           <td><input type="button" value="+"></td>
         </tr>
         <tr>
-          <td colspan="2"><input type="button" value="0"></td>
+          <td colspan="2"><input type="button" value="0" onclick="addToTextArea(0)"></td>
           <td><input type="button" value="."></td>
           <td><input type="button" value="="></td>
         </tr>
+        <script>
+          function clearTextArea() {
+            document.getElementById("textBox").value = "";
+          }
+
+          function addToTextArea(num) {
+            document.getElementById("textBox").value += num;
+          }
+        </script>
       </table>
     </div>
   </body>
