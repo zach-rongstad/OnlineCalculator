@@ -1,3 +1,9 @@
+let firstNumber = null;
+let secondNumber = null;
+let currentOperation = null;
+let isEnteringSecond = null;
+
+
 function clearTextArea() {
   document.getElementById("textBox").value = "";
 }
@@ -60,4 +66,10 @@ function percentage()
   let textInput = document.getElementById("textBox");
   let textValue = parseFloat(textInput.value)
   textInput.value = textValue / 100;
+}
+
+function addition(num1, num)
+{
+  let textInput = document.getElementById("textBox");
+  let textValue = parseFloat(textInput.value)
 }
