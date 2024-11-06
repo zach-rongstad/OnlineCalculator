@@ -25,7 +25,7 @@
       <p>This is a webpage for doing simple methematical calculations.</p>
     </div>
     <div class="calculationSection">
-      <input class="textarea" name="textarea" type="number" id="textBox">
+      <input class="textarea" name="textarea" type="text" id="textBox" style="display: block; visibility: visible;" oninput="validateInput()">
       <table>
         <tr>
           <td><input type="button" value="AC" id="AC" onclick="clearTextArea()"></td>
@@ -52,18 +52,11 @@
           <td><input type="button" value="+"></td>
         </tr>
         <tr>
-          <td colspan="2"><input type="button" value="0" onclick="addToTextArea(0)"></td>
-          <td><input type="button" value="."></td>
+          <td colspan="2"><input type="button" value="0" onclick="dontAddZero(0)"></td>
+          <td><input type="button" value="." onclick="addDecimal()"></td>
           <td><input type="button" value="="></td>
         </tr>
-        <script>
-          function clearTextArea() {
-            document.getElementById("textBox").value = "";
-          }
-
-          function addToTextArea(num) {
-            document.getElementById("textBox").value += num;
-          }
+        <script src="js/regCalcPageJS.js">
         </script>
       </table>
     </div>
