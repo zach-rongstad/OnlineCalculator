@@ -51,6 +51,13 @@ function validateInput()
 function positiveNegative()
 {
   let textInput = document.getElementById("textBox");
-  let textInputValue = textInput.value;
-  
+  let textValue = parseFloat(textInput.value)
+  textInput.value = (textValue * -1);
+}
+
+function percentage()
+{
+  let textInput = document.getElementById("textBox");
+  let textValue = parseFloat(textInput.value)
+  textInput.value = textValue / 100;
 }
