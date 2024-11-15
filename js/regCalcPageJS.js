@@ -268,3 +268,31 @@ function divisionFunction()
       currentOperation = division;
     }
 }
+
+function equalsOperation()
+{
+  let textInput = document.getElementById("textBox");
+  let ogNum = parseFloat(textInput.value);
+
+  if (currentOperation == division)
+  {
+    firstNumber = firstNumber / ogNum;
+  }
+  else if (currentOperation == addition)
+  {
+    firstNumber += ogNum;
+  }
+  else if (currentOperation == multiplication)
+  {
+    firstNumber = firstNumber * ogNum;
+  }
+  else if (currentOperation == subtraction)
+  {
+    firstNumber -= ogNum;
+  }
+
+  textInput.value = firstNumber;
+  isEnteringSecond = true;
+  timeToClear = true;
+  currentOperation = null;
+}
