@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>GPA Calculator Page</title>
+  </head>
+  <body>
+    <h1>Zach Rongstad's Calculator App</h1>
+    <div class="navigation">
+      <nav>
+        <ul class="navigationList">
+          <li><a href="regCalcPage.html">Basic Calculator</a></li>
+          <li><a href="complexCalcPage.html">Complex Calculator</a></li>
+          <li><a href="finalGradeCalcPage.html">Final Grade Calculator</a></li>
+          <li><a href="gpaCalcPage.html">GPA Calculator</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="description">
+      <p>This is a page to calculate your semester GPA.  You can add more classes and previous semesters to further help your calculations.</p>
+    </div>
+    <div class="semester1">
+      <div class="class1">
+        <input type="text" id="grade">
+        <label for="grade">Grade Achieved</label>
+        <input type="text" id="credits">
+        <label for="credits">Credits Obtainable</label>
+      </div>
+    </div>
+    <div class="addClassButton">
+      <input type="button" id="addClass" value="+">
+      <label for="addClass">Add Another Class</label>
+    </div>
+    <div class="addSemesterButton">
+      <input type="button" id="addSemester" value="+">
+      <label for="addSemester">Add Another Semester</label>
+    </div>
+    <div class="gpaCalculation">
+      <p>Your GPA is: </p>
+      <p id="gpa"></p>
+    </div>
+  </body>
+</html>
