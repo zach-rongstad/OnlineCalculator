@@ -26,10 +26,22 @@
     </div>
     <div class="semester1">
       <div class="class1">
-        <input type="text" id="grade">
         <label for="grade">Grade Achieved</label>
-        <input type="text" id="credits">
+        <select id="grade">
+          <option id="A+">A+</option>
+          <option id="A">A</option>
+          <option id="A-">A-</option>
+          <option id="B+">B+</option>
+          <option id="B">B</option>
+          <option id="B-">B-</option>
+          <option id="C+">C+</option>
+          <option id="C">C</option>
+          <option id="C-">C-</option>
+          <option id="D">D</option>
+          <option id="F">F</option>
+        </select>
         <label for="credits">Credits Obtainable</label>
+        <input type="number" id="credits">
       </div>
     </div>
     <div class="addClassButton">
@@ -44,5 +56,6 @@
       <p>Your GPA is: </p>
       <p id="gpa"></p>
     </div>
+    <script src="js/gpaCalcPage.js"></script>
   </body>
 </html>
