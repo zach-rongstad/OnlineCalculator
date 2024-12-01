@@ -24,25 +24,27 @@
     <div class="description">
       <p>This is a page to calculate your semester GPA.  You can add more classes and previous semesters to further help your calculations.</p>
     </div>
-    <div class="semester1">
-      <div class="class1">
-        <label for="grade">Grade Achieved</label>
-        <select id="grade">
-          <option id="A+">A+</option>
-          <option id="A">A</option>
-          <option id="A-">A-</option>
-          <option id="B+">B+</option>
-          <option id="B">B</option>
-          <option id="B-">B-</option>
-          <option id="C+">C+</option>
-          <option id="C">C</option>
-          <option id="C-">C-</option>
-          <option id="D">D</option>
-          <option id="F">F</option>
-        </select>
-        <label for="credits">Credits Obtainable</label>
-        <input type="number" id="credits">
-      </div>
+    <div class="semesterHolder">
+      <div class="semester1">
+        <h3>Semester 1</h3>
+        <div class="class1">
+          <label for="grade1">Grade Achieved</label>
+          <select id="grade1" class="grade1">
+            <option id="A+" value="4.0">A+</option>
+            <option id="A" value="4.0">A</option>
+            <option id="A-" value="3.7">A-</option>
+            <option id="B+"value="3.3">B+</option>
+            <option id="B" value="3.0">B</option>
+            <option id="B-" value="2.7">B-</option>
+            <option id="C+" value="2.3">C+</option>
+            <option id="C" value="2.0">C</option>
+            <option id="C-" value="1.7">C-</option>
+            <option id="D" value="1">D</option>
+            <option id="F" value="0">F</option>
+          </select>
+          <label for="credits1">Credits Obtainable</label>
+          <input type="number" id="credits1" class="credits1">
+        </div>
     </div>
     <div class="addClassButton">
       <input type="button" id="addClass" value="+">
@@ -56,6 +58,7 @@
       <p>Your GPA is: </p>
       <p id="gpa"></p>
     </div>
-    <script src="js/gpaCalcPage.js"></script>
+  </div>
+  <script src="js/gpaCalcPage.js"></script>
   </body>
 </html>
