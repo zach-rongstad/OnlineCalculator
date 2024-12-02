@@ -8,6 +8,10 @@ const subtraction = "-";
 const multiplication = "*";
 const division = "/";
 
+const allNumbers = document.querySelectorAll('.num');
+function $(id) {
+  return document.getElementById(id);
+}
 
 function clearTextArea() {
   document.getElementById("textBox").value = "";
@@ -18,16 +22,24 @@ function clearTextArea() {
   timeToClear = false;
 }
 
+$("AC").addEventListener("click", clearTextArea);
+
 function addToTextArea(num) {
   if (timeToClear) {
+    let newNum = parseInt(num);
     document.getElementById("textBox").value = "";
-    document.getElementById("textBox").value += num;
+    document.getElementById("textBox").value += newNum;
     timeToClear = false;
   }
   else {
-    document.getElementById("textBox").value += num;
+    let newNum = parseInt(num);
+    document.getElementById("textBox").value += newNum;
   }
 }
+
+allNumbers.forEach((element) => {
+  element.addEventListener('click', () => addToTextArea(element.value));
+});
 
 function dontAddZero(num) {
   let valueBox = document.getElementById("textBox").value;
@@ -49,6 +61,7 @@ function dontAddZero(num) {
   }
 }
 
+
 function addDecimal()
 {
   const inputElement = document.getElementById("textBox");
@@ -66,6 +79,8 @@ function addDecimal()
   console.log(inputElement.value);
 }
 
+$("decimal").addEventListener("click", addDecimal);
+
 function validateInput()
 {
   let textInput = document.getElementById("textBox");
@@ -79,19 +94,32 @@ function validateInput()
   }
 }
 
+$("textBox").addEventListener("input", validateInput);
+
 function positiveNegative()
 {
   let textInput = document.getElementById("textBox");
-  let textValue = parseFloat(textInput.value)
-  textInput.value = (textValue * -1);
+  if (textInput.value != "")
+  {
+    let textValue = parseFloat(textInput.value);
+    textInput.value = (textValue * -1);
+  }
+  
 }
+
+$("plusMinus").addEventListener("click", positiveNegative);
 
 function percentage()
 {
   let textInput = document.getElementById("textBox");
-  let textValue = parseFloat(textInput.value)
-  textInput.value = textValue / 100;
+  if (textInput.value != "")
+  {
+    let textValue = parseFloat(textInput.value);
+    textInput.value = textValue / 100; 
+  }
 }
+
+$("remainder").addEventListener("click", percentage);
 
 function additionFunction()
 {
@@ -137,6 +165,8 @@ function additionFunction()
   }
 }
 
+$("addition").addEventListener('click', additionFunction);
+
 function subtractionFunction()
 {
   let textInput = document.getElementById("textBox");
@@ -180,6 +210,8 @@ function subtractionFunction()
       currentOperation = subtraction;
     }
 }
+
+$("subtraction").addEventListener('click', subtractionFunction);
 
 function multiplicationFunction()
 {
@@ -225,6 +257,8 @@ function multiplicationFunction()
     }
 }
 
+$("multiplication").addEventListener('click', multiplicationFunction);
+
 function divisionFunction()
 {
   let textInput = document.getElementById("textBox");
@@ -269,6 +303,8 @@ function divisionFunction()
     }
 }
 
+$("division").addEventListener("click", divisionFunction);
+
 function equalsOperation()
 {
   let textInput = document.getElementById("textBox");
@@ -300,3 +336,145 @@ function equalsOperation()
   timeToClear = true;
   currentOperation = null;
 }
+
+$("equals").addEventListener('click', equalsOperation);
+
+
+function multipleTwo()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let newNum = ogNum * ogNum;
+    $("textBox").value = newNum;
+  }
+  
+}
+
+$("power2").addEventListener('click', multipleTwo);
+
+function multipleThree()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let newNum = ogNum * ogNum * ogNum;
+    $("textBox").value = newNum;
+  }
+  
+}
+
+$("power3").addEventListener('click', multipleThree);
+
+function sine()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let sin = Math.sin(ogNum);
+    $("textBox").value = sin;
+  }
+  
+}
+
+$("sin").addEventListener('click', sine);
+
+function cosine()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let cos = Math.cos(ogNum);
+    $("textBox").value = cos;
+  }
+  
+}
+
+$("cos").addEventListener('click', cosine);
+
+function tangent()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let tan = Math.tan(ogNum);
+    $('textBox').value = tan;
+  }
+  
+}
+
+$('tan').addEventListener('click', tangent);
+
+function cosecant()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let csc = 1 / Math.sin(ogNum);
+    $('textBox').value = csc;
+  }
+  
+}
+
+$('cosecant').addEventListener('click', cosecant);
+
+function secant()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let sec = 1 / Math.cos(ogNum);
+    $('textBox').value = sec;
+  }
+  
+}
+
+$('secant').addEventListener('click', secant);
+
+function cotangent()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let cot = 1 / Math.tan(ogNum);
+    $("textBox").value = cot;
+  }
+  
+}
+
+$("cotangent").addEventListener('click', cotangent);
+
+function log()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let log = Math.log(ogNum);
+    $("textBox").value = log;
+  }
+  
+}
+
+$("log").addEventListener('click', log);
+
+function ln()
+{
+  let textInput = $("textBox");
+  let ogNum = parseFloat(textInput.value);
+  if (textInput.value != "")
+  {
+    let ln = Math.log(ogNum);
+    $("textBox").value = ln;
+  }
+}
+
+$("ln").addEventListener('click', ln);

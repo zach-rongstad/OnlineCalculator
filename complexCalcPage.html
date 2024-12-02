@@ -22,7 +22,7 @@
       </nav>
     </div>
     <div class="description">
-      <p>This is a webpage for doing simple mathematical calculations.</p>
+      <p>This is a webpage for doing complex mathematical calculations.</p>
     </div>
     <div class="calculationSection">
       <input class="textarea" name="textarea" type="text" id="textBox" style="display: block; visibility: visible;">
@@ -31,41 +31,43 @@
           <td><input type="button" value="(" id="openParenthesis"></td>
           <td><input type="button" value=")" id="closedParenthesis"></td>
           <td><input type="button" value="AC" id="AC" ></td>
-          <td><input type="button" value="+/-" ></td>
-          <td><input type="button" value="%" ></td>
-          <td><input type="button" value="/"></td>
+          <td><input type="button" value="+/-" id="plusMinus"></td>
+          <td><input type="button" value="%" id="remainder"></td>
+          <td><input type="button" value="/" id="division"></td>
         </tr>
         <tr>
-          <td><input type="button" value="^2"></td>
-          <td><input type="button" value="^3"></td>
-          <td><input type="button" value="7" ></td>
-          <td><input type="button" value="8" ></td>
-          <td><input type="button" value="9" ></td>
-          <td><input type="button" value="X"></td>
+          <td><input type="button" value="^2" id="power2"></td>
+          <td><input type="button" value="^3" id="power3"></td>
+          <td><input type="button" value="7" id="seven" class="num"></td>
+          <td><input type="button" value="8" id="eight" class="num"></td>
+          <td><input type="button" value="9" id="nine" class="num"></td>
+          <td><input type="button" value="X" id="multiplication"></td>
         </tr>
         <tr>
-          <td><input type="button" value="sin()"></td>
-          <td><input type="button" value="cos()"></td>
-          <td><input type="button" value="tan()"></td>
-          <td><input type="button" value="4" ></td>
-          <td><input type="button" value="5" ></td>
-          <td><input type="button" value="6" ></td>
-          <td><input type="button" value="-" ></td>
+          <td><input type="button" value="sin()" id="sin"></td>
+          <td><input type="button" value="cos()" id="cos"></td>
+          <td><input type="button" value="tan()" id="tan"></td>
+          <td><input type="button" value="4" id="four" class="num"></td>
+          <td><input type="button" value="5" id="five" class="num"></td>
+          <td><input type="button" value="6" id="six" class="num"></td>
+          <td><input type="button" value="-" id="subtraction"></td>
         </tr>
         <tr>
-          <td><input type="button" value="csc()"></td>
-          <td><input type="button" value="sec()"></td>
-          <td><input type="button" value="cot()"></td>
-          <td><input type="button" value="1" ></td>
-          <td><input type="button" value="2" ></td>
-          <td><input type="button" value="3" ></td>
-          <td><input type="button" value="+" ></td>
+          <td><input type="button" value="csc()" id="cosecant"></td>
+          <td><input type="button" value="sec()" id="secant"></td>
+          <td><input type="button" value="cot()" id="cotangent"></td>
+          <td><input type="button" value="1" id="one" class="num"></td>
+          <td><input type="button" value="2" id="two" class="num"></td>
+          <td><input type="button" value="3" id="three" class="num"></td>
+          <td><input type="button" value="+" id="addition"></td>
         </tr>
         <tr>
-          <td><input type="button" value="log()"></td>
-          <td><input type="button" value="ln()"></td>
-          <td colspan="2"><input type="button" value="0"></td>
-          <td><input type="button" value="." ></td>
-          <td><input type="button" value="=" ></td>
+          <td><input type="button" value="log()" id="log"></td>
+          <td><input type="button" value="ln()" id="ln"></td>
+          <td colspan="2"><input type="button" value="0" id="zero" onclick="dontAddZero(0)"></td>
+          <td><input type="button" value="." id="decimal"></td>
+          <td><input type="button" value="=" id="equals"></td>
         </tr>
+        <script src="js/complexCalcPage.js"></script>
   </body>
+</html>
