@@ -458,7 +458,7 @@ function log()
   let ogNum = parseFloat(textInput.value);
   if (textInput.value != "")
   {
-    let log = Math.log(ogNum);
+    let log = Math.log(ogNum) / Math.log(10);
     $("textBox").value = log;
   }
   
