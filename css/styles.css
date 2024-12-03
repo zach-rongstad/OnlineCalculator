@@ -44,6 +44,8 @@ body {
 
 p {
   text-align: center;
+  font-family: "Roboto", serif;
+  font-size: 25px;
 }
 
 table {
@@ -78,11 +80,6 @@ input[type=button]:hover {
   width: 175px;
 }
 
-p {
-  font-family: "Roboto", serif;
-  font-size: 25px;
-}
-
 input[type=button].active {
   background-color: darkorange;
 }
@@ -99,9 +96,23 @@ input[type=number] {
   font-size: 20px;
 }
 
-.calcSection {
-  align-items: center;
-  display:inline;
-  justify-content: center;
-  flex-direction: column;
+.calcSection, .gradeSection {
+  display: flex;
+  flex-direction:column; 
+  align-items: center; 
+  margin: 10px; 
+}
+
+.gradeSection input {
+  text-align: center;
+  width: 250px;
+}
+
+.calcSection div {
+  padding: 10px;
+}
+
+.dark {
+  background-color: darkslategrey;
+  color: antiquewhite;
 }
