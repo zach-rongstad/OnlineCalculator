@@ -7,7 +7,9 @@ const addition = "+";
 const subtraction = "-";
 const multiplication = "*";
 const division = "/";
-
+function $(id) {
+  return document.getElementById(id);
+}
 
 function clearTextArea() {
   document.getElementById("textBox").value = "";
@@ -16,6 +18,10 @@ function clearTextArea() {
   currentOperation = null;
   isEnteringSecond = false;
   timeToClear = false;
+  $("addition").classList.remove("active");
+  $("subtraction").classList.remove("active");
+  $("multiplication").classList.remove("active");
+  $("division").classList.remove("active");
 }
 
 function addToTextArea(num) {
@@ -83,197 +89,244 @@ function positiveNegative()
 {
   let textInput = document.getElementById("textBox");
   let textValue = parseFloat(textInput.value)
-  textInput.value = (textValue * -1);
+  console.log(!isNaN(textValue));
+  if (!isNaN(textValue))
+  {
+    textInput.value = (textValue * -1);
+  }
 }
 
 function percentage()
 {
   let textInput = document.getElementById("textBox");
   let textValue = parseFloat(textInput.value)
-  textInput.value = textValue / 100;
+  if (!isNaN(textValue))
+  {
+    textInput.value = textValue / 100;
+  }
 }
 
 function additionFunction()
 {
   let textInput = document.getElementById("textBox");
   let ogNum = parseFloat(textInput.value);
-  if (currentOperation == null)
+  
+  if (!isNaN(ogNum))
   {
-    currentOperation = addition;
-    firstNumber = ogNum;
-    isEnteringSecond = true;
-    timeToClear = true;
+    $("addition").classList.remove("active");
+    $("subtraction").classList.remove("active");
+    $("multiplication").classList.remove("active");
+    $("division").classList.remove("active");
+    if (currentOperation == null)
+      {
+        currentOperation = addition;
+        firstNumber = ogNum;
+        isEnteringSecond = true;
+        timeToClear = true;
+      }
+      else if (currentOperation == addition)
+      {
+        firstNumber += ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+      }
+      else if (currentOperation == subtraction)
+      {
+        firstNumber -= ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+        currentOperation = addition;
+      }
+      else if (currentOperation == multiplication)
+      {
+        firstNumber = firstNumber * ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+        currentOperation = addition;
+      }
+      else if (currentOperation == division)
+      {
+        firstNumber = firstNumber / ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+        currentOperation = addition;
+      }
+      $("addition").classList.add("active");
   }
-  else if (currentOperation == addition)
-  {
-    firstNumber += ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-  }
-  else if (currentOperation == subtraction)
-  {
-    firstNumber -= ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-    currentOperation = addition;
-  }
-  else if (currentOperation == multiplication)
-  {
-    firstNumber = firstNumber * ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-    currentOperation = addition;
-  }
-  else if (currentOperation == division)
-  {
-    firstNumber = firstNumber / ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-    currentOperation = addition;
-  }
+  
 }
 
 function subtractionFunction()
 {
   let textInput = document.getElementById("textBox");
   let ogNum = parseFloat(textInput.value);
-  if (currentOperation == null)
+  if (!isNaN(ogNum))
   {
-    currentOperation = subtraction;
-    firstNumber = ogNum;
-    isEnteringSecond = true;
-    timeToClear = true;
+    $("addition").classList.remove("active");
+    $("subtraction").classList.remove("active");
+    $("multiplication").classList.remove("active");
+    $("division").classList.remove("active");
+    if (currentOperation == null)
+      {
+        currentOperation = subtraction;
+        firstNumber = ogNum;
+        isEnteringSecond = true;
+        timeToClear = true;
+      }
+      else if (currentOperation == subtraction)
+      {
+        firstNumber -= ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+      }
+      else if (currentOperation == addition)
+      {
+        firstNumber += ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+        currentOperation = subtraction;
+      }
+      else if (currentOperation == multiplication)
+        {
+          firstNumber = firstNumber * ogNum;
+          textInput.value = firstNumber;
+          isEnteringSecond = true;
+          timeToClear = true;
+          currentOperation = subtraction;
+        }
+        else if (currentOperation == division)
+        {
+          firstNumber = firstNumber / ogNum;
+          textInput.value = firstNumber;
+          isEnteringSecond = true;
+          timeToClear = true;
+          currentOperation = subtraction;
+        }
+        $("subtraction").classList.add("active");
   }
-  else if (currentOperation == subtraction)
-  {
-    firstNumber -= ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-  }
-  else if (currentOperation == addition)
-  {
-    firstNumber += ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-    currentOperation = subtraction;
-  }
-  else if (currentOperation == multiplication)
-    {
-      firstNumber = firstNumber * ogNum;
-      textInput.value = firstNumber;
-      isEnteringSecond = true;
-      timeToClear = true;
-      currentOperation = subtraction;
-    }
-    else if (currentOperation == division)
-    {
-      firstNumber = firstNumber / ogNum;
-      textInput.value = firstNumber;
-      isEnteringSecond = true;
-      timeToClear = true;
-      currentOperation = subtraction;
-    }
+  
 }
 
 function multiplicationFunction()
 {
   let textInput = document.getElementById("textBox");
   let ogNum = parseFloat(textInput.value);
-  if (currentOperation == null)
+  if (!isNaN(ogNum))
   {
-    currentOperation = multiplication;
-    firstNumber = ogNum;
-    isEnteringSecond = true;
-    timeToClear = true;
+    $("addition").classList.remove("active");
+    $("subtraction").classList.remove("active");
+    $("multiplication").classList.remove("active");
+    $("division").classList.remove("active");
+    if (currentOperation == null)
+      {
+        currentOperation = multiplication;
+        firstNumber = ogNum;
+        isEnteringSecond = true;
+        timeToClear = true;
+      }
+      else if (currentOperation == multiplication)
+      {
+        firstNumber = firstNumber * ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+      }
+      else if (currentOperation == addition)
+      {
+        firstNumber += ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+        currentOperation = multiplication;
+      }
+      else if (currentOperation == subtraction)
+        {
+          firstNumber = firstNumber - ogNum;
+          textInput.value = firstNumber;
+          isEnteringSecond = true;
+          timeToClear = true;
+          currentOperation = multiplication;
+        }
+        else if (currentOperation == division)
+        {
+          firstNumber = firstNumber / ogNum;
+          textInput.value = firstNumber;
+          isEnteringSecond = true;
+          timeToClear = true;
+          currentOperation = multiplication;
+        }
+        $("multiplication").classList.add("active");
   }
-  else if (currentOperation == multiplication)
-  {
-    firstNumber = firstNumber * ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-  }
-  else if (currentOperation == addition)
-  {
-    firstNumber += ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-    currentOperation = multiplication;
-  }
-  else if (currentOperation == subtraction)
-    {
-      firstNumber = firstNumber - ogNum;
-      textInput.value = firstNumber;
-      isEnteringSecond = true;
-      timeToClear = true;
-      currentOperation = multiplication;
-    }
-    else if (currentOperation == division)
-    {
-      firstNumber = firstNumber / ogNum;
-      textInput.value = firstNumber;
-      isEnteringSecond = true;
-      timeToClear = true;
-      currentOperation = multiplication;
-    }
+  
 }
 
 function divisionFunction()
 {
   let textInput = document.getElementById("textBox");
   let ogNum = parseFloat(textInput.value);
-  if (currentOperation == null)
+  if (!isNaN(ogNum))
   {
-    currentOperation = division;
-    firstNumber = ogNum;
-    isEnteringSecond = true;
-    timeToClear = true;
+    $("addition").classList.remove("active");
+    $("subtraction").classList.remove("active");
+    $("multiplication").classList.remove("active");
+    $("division").classList.remove("active");
+    if (currentOperation == null)
+      {
+        currentOperation = division;
+        firstNumber = ogNum;
+        isEnteringSecond = true;
+        timeToClear = true;
+      }
+      else if (currentOperation == division)
+      {
+        firstNumber = firstNumber / ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+      }
+      else if (currentOperation == addition)
+      {
+        firstNumber += ogNum;
+        textInput.value = firstNumber;
+        isEnteringSecond = true;
+        timeToClear = true;
+        currentOperation = division;
+      }
+      else if (currentOperation == multiplication)
+        {
+          firstNumber = firstNumber * ogNum;
+          textInput.value = firstNumber;
+          isEnteringSecond = true;
+          timeToClear = true;
+          currentOperation = division;
+        }
+        else if (currentOperation == subtraction)
+        {
+          firstNumber -= ogNum;
+          textInput.value = firstNumber;
+          isEnteringSecond = true;
+          timeToClear = true;
+          currentOperation = division;
+        }
+        $("division").classList.add("active");
   }
-  else if (currentOperation == division)
-  {
-    firstNumber = firstNumber / ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-  }
-  else if (currentOperation == addition)
-  {
-    firstNumber += ogNum;
-    textInput.value = firstNumber;
-    isEnteringSecond = true;
-    timeToClear = true;
-    currentOperation = division;
-  }
-  else if (currentOperation == multiplication)
-    {
-      firstNumber = firstNumber * ogNum;
-      textInput.value = firstNumber;
-      isEnteringSecond = true;
-      timeToClear = true;
-      currentOperation = division;
-    }
-    else if (currentOperation == subtraction)
-    {
-      firstNumber -= ogNum;
-      textInput.value = firstNumber;
-      isEnteringSecond = true;
-      timeToClear = true;
-      currentOperation = division;
-    }
+  
 }
 
 function equalsOperation()
 {
   let textInput = document.getElementById("textBox");
   let ogNum = parseFloat(textInput.value);
-
+  $("addition").classList.remove("active");
+  $("subtraction").classList.remove("active");
+  $("multiplication").classList.remove("active");
+  $("division").classList.remove("active");
   if (currentOperation == division)
   {
     firstNumber = firstNumber / ogNum;

@@ -31,34 +31,33 @@
           <td><input type="button" value="AC" id="AC" onclick="clearTextArea()"></td>
           <td><input type="button" value="+/-" onclick="positiveNegative()"></td>
           <td><input type="button" value="%" onclick="percentage()"></td>
-          <td><input type="button" value="/" onclick="divisionFunction()"></td>
+          <td><input type="button" value="/" id="division" onclick="divisionFunction()"></td>
         </tr>
         <tr>
           <td><input type="button" value="7" onclick="addToTextArea(7)"></td>
           <td><input type="button" value="8" onclick="addToTextArea(8)"></td>
           <td><input type="button" value="9" onclick="addToTextArea(9)"></td>
-          <td><input type="button" value="X" onclick ="multiplicationFunction()"></td>
+          <td><input type="button" value="X" id="multiplication" onclick ="multiplicationFunction()"></td>
         </tr>
         <tr>
           <td><input type="button" value="4" onclick="addToTextArea(4)"></td>
           <td><input type="button" value="5" onclick="addToTextArea(5)"></td>
           <td><input type="button" value="6" onclick="addToTextArea(6)"></td>
-          <td><input type="button" value="-" onclick="subtractionFunction()"></td>
+          <td><input type="button" value="-" id="subtraction" onclick="subtractionFunction()"></td>
         </tr>
         <tr>
           <td><input type="button" value="1" onclick="addToTextArea(1)"></td>
           <td><input type="button" value="2" onclick="addToTextArea(2)"></td>
           <td><input type="button" value="3" onclick="addToTextArea(3)"></td>
-          <td><input type="button" value="+" onclick="additionFunction()"></td>
+          <td><input type="button" value="+" id="addition" onclick="additionFunction()"></td>
         </tr>
         <tr>
-          <td colspan="2"><input type="button" value="0" onclick="dontAddZero(0)"></td>
+          <td colspan="2"><input type="button" value="0" id="zero" onclick="dontAddZero(0)"></td>
           <td><input type="button" value="." onclick="addDecimal()"></td>
           <td><input type="button" value="=" onclick="equalsOperation()"></td>
         </tr>
-        <script src="js/regCalcPageJS.js">
-        </script>
       </table>
     </div>
+    <script src="js/regCalcPageJS.js"></script>
   </body>
 </html>
