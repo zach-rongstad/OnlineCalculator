@@ -116,3 +116,42 @@ input[type=number] {
   background-color: darkslategrey;
   color: antiquewhite;
 }
+
+.dark select {
+  background-color: grey;
+  color:antiquewhite;
+}
+
+.dark input[type=number]
+{
+  background-color: grey;
+  color: antiquewhite;
+}
+
+.semesterHolder {
+  font-size: 30px;
+  text-align: center;
+}
+
+select {
+  /* width: 100px; */
+  height: 25px;
+  width: 50px;
+  text-decoration: none;
+  font-family: "Roboto", serif;
+  font-size: 20px;
+}
+
+.addClassButton input {
+  width: 50px;
+  height: 30px;
+}
+
+.addSemesterButton input {
+  width: 50px;
+  height: 30px;
+}
+
+.darkModeButton {
+  width: 100px;
+}
