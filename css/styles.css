@@ -152,6 +152,12 @@ select {
   height: 30px;
 }
 
-.darkModeButton {
-  width: 100px;
+#darkModeButton {
+  width: auto;
+  height: auto;
+  text-align: center;
+  align-content: center;
+  margin: auto;
+  display: block;
+  margin-bottom: 10px;
 }
